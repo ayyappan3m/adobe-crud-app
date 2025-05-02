@@ -55,3 +55,77 @@ docker build -t adobe-crud-app .
 ```bash
 docker run -p 3000:3000 --env-file .env adobe-crud-app
 ```
+
+
+##API Endpoints (Use Postman to Test)
+
+1. Register a New User
+```bash
+POST http://localhost:3000/register
+```
+Body (raw JSON):
+```bash
+{
+  "username": "ayyappan",
+  "password": "test123"
+}
+```
+2. Login to Get JWT Token
+```bash
+POST http://localhost:3000/login
+```
+Body (raw JSON):
+```bash
+{
+  "username": "ayyappan",
+  "password": "test123"
+}
+```
+➡️ Response:
+```bash
+{
+  "token": "<your-jwt-token>"
+}
+```
+3. Use JWT in Authorization Header
+```bash
+Authorization: Bearer <your-jwt-token>
+```
+
+4. Get All Items
+```bash
+GET http://localhost:3000/items
+```
+
+5. Create a New Item
+```bash
+POST http://localhost:3000/items
+```
+Body (raw JSON):
+```bash
+{
+  "name": "Laptop",
+  "price": 1200
+}
+```
+6. Update an Item
+```bash
+PUT http://localhost:3000/items/0
+```
+Body (raw JSON):
+```bash
+{
+  "name": "Laptop Pro",
+  "price": 1500
+}
+```
+7. Delete an Item
+```bash
+DELETE http://localhost:3000/items/0
+```
+
+
+🔒 Rate Limiting
+Requests are limited to 100 per 15 minutes per IP
+
+Exceeding the limit returns 429 Too Many Requests
