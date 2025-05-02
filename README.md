@@ -129,3 +129,32 @@ DELETE http://localhost:3000/items/0
 Requests are limited to 100 per 15 minutes per IP
 
 Exceeding the limit returns 429 Too Many Requests
+
+
+##1. Docker image for Cloud Run’s architecture
+
+```bash
+docker build --platform=linux/amd64 -t gcr.io/YOUR_PROJECT_ID/adobe-crud-app .
+```
+
+2. Push the updated image to Google Container Registry
+```bash
+docker push gcr.io/YOUR_PROJECT_ID/adobe-crud-app
+```
+
+3. Redeploy to Cloud Run
+```bash
+gcloud run deploy adobe-crud-app \
+  --image gcr.io/YOUR_PROJECT_ID/adobe-crud-app \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated
+```
+
+After that, you should get a live public URL like:
+```bash
+https://adobe-crud-app-xxxx.a.run.app
+```
+
+
+Also Here I have attached some attachements for reference
