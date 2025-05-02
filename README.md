@@ -24,11 +24,14 @@ This is a containerized web application implementing basic CRUD operations, JWT-
 ```bash
 git clone https://github.com/your-username/adobe-crud-app.git
 cd adobe-crud-app
+```
 
 ###2. Install dependencies
 ```bash
 npm install
+```
 
 ###3. Create a .env file
 ```bash
 JWT_SECRET=#privatekey
+```
