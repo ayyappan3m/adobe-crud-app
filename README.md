@@ -158,3 +158,6 @@ https://adobe-crud-app-xxxx.a.run.app
 
 
 Also Here I have attached some attachements for reference
+
+
+My GCP service URL: https://adobe-crud-app-965876148462.us-central1.run.app
