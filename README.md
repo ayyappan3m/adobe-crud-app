@@ -35,3 +35,23 @@ npm install
 ```bash
 JWT_SECRET=#privatekey
 ```
+
+4. Run the app locally
+```bash
+node index.js
+```
+
+Server will start on: http://localhost:3000
+
+
+## Running with Docker
+
+1. Build Docker image
+```bash
+docker build -t adobe-crud-app .
+```
+
+2. Run Docker container
+```bash
+docker run -p 3000:3000 --env-file .env adobe-crud-app
+```
